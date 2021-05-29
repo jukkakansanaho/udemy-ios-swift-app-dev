@@ -2,8 +2,8 @@ _Udemy: iOS + Swift - The Complete iOS App Development Bootcamp | jukka.kansanah
 
 # Udemy: iOS + Swift - The Complete iOS App Development Bootcamp
 
-This course of iOS App Development using Swift can be found from Udemy by Angela Yu (https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/).
-Target of the course is to learn iOS development with Swift.
+- This course of iOS App Development using Swift can be found from Udemy by Angela Yu (https://www.udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/).
+- Target of the course is to learn iOS development with Swift.
 
 ## What to learn
 - Be able to build any app you want
