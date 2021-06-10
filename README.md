@@ -18,6 +18,7 @@ _Udemy: iOS + Swift - The Complete iOS App Development Bootcamp | jukka.kansanah
 
 ## Resources
 - Udemy: iOS + Swift - The Complete iOS App Development Bootcamp: https://www.udemy.com/course/ios-13-app-development-bootcamp/
+- Course resources: https://www.appbrewery.co/p/ios-course-resources/
 
 
 # Topics
