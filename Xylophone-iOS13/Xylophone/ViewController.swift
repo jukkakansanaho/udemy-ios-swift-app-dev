@@ -21,10 +21,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
+        // Play sound related to specific letter (Button's title)
         playSound(soundName: sender.currentTitle!)
+        
+        // Modifies sender's opacity by 50%
+        sender.alpha = 0.5
+        
+        // Specific code that is executes after the specified delay (0.2s)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1.0
+        }
+        
     }
     
-//    NOTE: See below eample code from Stack Overflow:
+//    NOTE: See below example code from Stack Overflow:
 //    func playSound() {
 //        guard let url = Bundle.main.url(forResource: "C", withExtension: "wav") else { return }
 //
