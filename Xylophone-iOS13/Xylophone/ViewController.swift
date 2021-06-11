@@ -21,9 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-//        print("Sender: \(sender.titleLabel?.text)")
-        print("Sender: \(sender.currentTitle)")
-        playSound()
+        playSound(soundName: sender.currentTitle!)
     }
     
 //    NOTE: See below eample code from Stack Overflow:
@@ -47,8 +45,8 @@ class ViewController: UIViewController {
 //    }
     
 //    NOTE: See below (simplified) example code:
-    func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
                 
