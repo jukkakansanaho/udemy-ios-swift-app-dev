@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
         
-        let hardness = sender.currentTitle
+        let hardness = sender.currentTitle! // Soft | Medium | Hard
         
 //        if hardness == "Soft" {
 //            print(softTime)
@@ -25,11 +25,8 @@ class ViewController: UIViewController {
 //        } else {
 //            print("Wrong hardness selected...")
 //        }
-        for (key, value) in eggTimes {
-            if key == hardness {
-                print(value)
-            }
-        }
+        let result = eggTimes[hardness]!
+        print(result)
             
     }
     
