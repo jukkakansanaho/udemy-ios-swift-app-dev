@@ -86,24 +86,50 @@
 //
 //calculator()
 // --------------------------------
-//Coding Exewrcise 6: IF/ELSE
-func isLeap(year: Int) {
-    
-    if (year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0) {
-        print("\(year): YES")
-    } else if (year % 4 == 0) && (year % 100 == 0) {
-        print("\(year): NO")
-    } else if year % 4 == 0 {
-        print("\(year): YES")
-    } else {
-        print("\(year): NO")
+////Coding Exewrcise 6: IF/ELSE
+//func isLeap(year: Int) {
+//
+//    if (year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0) {
+//        print("\(year): YES")
+//    } else if (year % 4 == 0) && (year % 100 == 0) {
+//        print("\(year): NO")
+//    } else if year % 4 == 0 {
+//        print("\(year): YES")
+//    } else {
+//        print("\(year): NO")
+//    }
+//
+//}
+//isLeap(year: 1200)
+//isLeap(year: 1257)
+//isLeap(year: 1997)
+//isLeap(year: 2000)
+//isLeap(year: 2100)
+
+// --------------------------------
+//Coding Exewrcise 7: Switch
+func dayOfTheWeek(day: Int) {
+  
+    switch day {
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thursday")
+    case 5:
+        print("Friday")
+    case 6:
+        print("Saturday")
+    case 7:
+        print("Sunday")
+    default:
+        print("Error")
     }
   
 }
-isLeap(year: 1200)
-isLeap(year: 1257)
-isLeap(year: 1997)
-isLeap(year: 2000)
-isLeap(year: 2100)
+dayOfTheWeek(day: 1)
 
 
