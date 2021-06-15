@@ -1,5 +1,6 @@
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -12,6 +13,7 @@ class ViewController: UIViewController {
         "Hard": 7 //12 * 60
     ]
     var timer = Timer()
+    var player: AVAudioPlayer!
     var totalTime = 0
     var secondsPassed = 0
     
@@ -46,9 +48,17 @@ class ViewController: UIViewController {
             print("\(secondsPassed)/\(totalTime) sec. passed.")
             progressBar.progress = Float(secondsPassed) / Float(totalTime)
         } else {
+            playSound(soundName: "alarm_sound")
             timer.invalidate()
             self.titleLabel.text = "DONE"
             print("DONE")
         }
+    }
+    
+    func playSound(soundName: String) {
+        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+                
     }
 }
