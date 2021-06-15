@@ -157,20 +157,57 @@
 // Coding Exercise 9: Optionals
 //Don't change this
 //var studentsAndScores = ["Amy": Int(readLine()!)!, "James": Int(readLine()!)!, "Helen": Int(readLine()!)!]
-var studentsAndScores = ["Amy": 88, "James": 55, "Helen": 99]
+//var studentsAndScores = ["Amy": 88, "James": 55, "Helen": 99]
+//
+//func highestScore(scores: [String: Int]) {
+//
+//    var highestScore : Int = 0
+//
+//    for score in scores.values {
+//        if score > highestScore {
+//            highestScore = score
+//        }
+//    }
+//    print(highestScore)
+//
+//}
+//highestScore(scores: ["Amy": 88, "James": 55, "Helen": 99])
+//highestScore(scores: ["Amy": 1, "James": 90, "Helen": 89])
 
-func highestScore(scores: [String: Int]) {
-  
-    var highestScore : Int = 0
-    
-    for score in scores.values {
-        if score > highestScore {
-            highestScore = score
+// --------------------------------
+// Coding Exercise 10: Stuctures
+func exercise() {
+
+    // Define the User struct here
+    struct User {
+        let name: String
+        var email: String
+        var followers: Int
+        var isActive: Bool
+        
+        func logStatus() {
+            if isActive {
+                print("\(self.name) is working hard")
+            } else {
+                print("\(self.name) has left earth")
+            }
         }
     }
-    print(highestScore)
-  
-}
-highestScore(scores: ["Amy": 88, "James": 55, "Helen": 99])
-highestScore(scores: ["Amy": 1, "James": 90, "Helen": 89])
 
+    // Initialise a User struct here
+    var richard = User(name: "Richard", email: "richard@foo.bar", followers: 0, isActive: false)
+    richard.logStatus()
+
+
+    // Diagnostic code - do not change this code
+    print("\nDiagnostic code (i.e., Challenge Hint):")
+    var musk = User(name: "Elon", email: "elon@tesla.com", followers: 2001, isActive: true)
+    musk.logStatus()
+    print("Contacting \(musk.name) on \(musk.email) ...")
+    print("\(musk.name) has \(musk.followers) followers")
+    // sometime later
+    musk.isActive = false
+    musk.logStatus()
+    
+}
+exercise()
