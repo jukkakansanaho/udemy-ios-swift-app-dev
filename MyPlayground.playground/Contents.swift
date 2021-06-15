@@ -133,22 +133,44 @@
 //dayOfTheWeek(day: 1)
 
 // --------------------------------
-//Coding Exercise 8: Dictionary
-func exercise() {
+// Coding Exercise 8: Dictionary
+//func exercise() {
+//
+//    var stockTickers: [String: String] = [
+//        "APPL" : "Apple Inc",
+//        "HOG": "Harley-Davidson Inc",
+//        "BOOM": "Dynamic Materials",
+//        "HEINY": "Heineken",
+//        "BEN": "Franklin Resources Inc"
+//    ]
+//
+//    stockTickers["WORK"] = "Slack Technologies Inc"
+//    stockTickers["BOOM"] = "DMC Global Inc"
+//
+//     //Don't modify this
+//    print(stockTickers["WORK"]!)
+//    print(stockTickers["BOOM"]!)
+//}
+//exercise()
 
-    var stockTickers: [String: String] = [
-        "APPL" : "Apple Inc",
-        "HOG": "Harley-Davidson Inc",
-        "BOOM": "Dynamic Materials",
-        "HEINY": "Heineken",
-        "BEN": "Franklin Resources Inc"
-    ]
+// --------------------------------
+// Coding Exercise 9: Optionals
+//Don't change this
+//var studentsAndScores = ["Amy": Int(readLine()!)!, "James": Int(readLine()!)!, "Helen": Int(readLine()!)!]
+var studentsAndScores = ["Amy": 88, "James": 55, "Helen": 99]
+
+func highestScore(scores: [String: Int]) {
+  
+    var highestScore : Int = 0
     
-    stockTickers["WORK"] = "Slack Technologies Inc"
-    stockTickers["BOOM"] = "DMC Global Inc"
-    
-     //Don't modify this
-    print(stockTickers["WORK"]!)
-    print(stockTickers["BOOM"]!)
+    for score in scores.values {
+        if score > highestScore {
+            highestScore = score
+        }
+    }
+    print(highestScore)
+  
 }
-exercise()
+highestScore(scores: ["Amy": 88, "James": 55, "Helen": 99])
+highestScore(scores: ["Amy": 1, "James": 90, "Helen": 89])
+
