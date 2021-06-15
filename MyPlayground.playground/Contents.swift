@@ -8,7 +8,7 @@
 // sd
 // f*/
 //print("Hello \(2+5) World")
-
+// --------------------------------
 // Coding Exercise 2: Arrays
 //func exercise() {
 //
@@ -33,7 +33,7 @@
 //
 //}
 //exercise()
-
+// --------------------------------
 // Coding Exercise 4: Randomization
 //func exercise() {
 //
@@ -53,35 +53,57 @@
 //
 //}
 //exercise()
-
-//Coding Exewrcise 5: Functions
-func calculator() {
-//  let a = Int(readLine()!)! //First input
-//  let b = Int(readLine()!)! //Second input
-    let a = Int(3) //First input
-    let b = Int(4) //Second input
+// --------------------------------
+////Coding Exewrcise 5: Functions
+//func calculator() {
+////  let a = Int(readLine()!)! //First input
+////  let b = Int(readLine()!)! //Second input
+//    let a = Int(3) //First input
+//    let b = Int(4) //Second input
+//
+//  add(n1: a, n2: b)
+//  subtract(n1: a, n2: b)
+//  multiply(n1: a, n2: b)
+//  divide(n1: a, n2: b)
+//
+//}
+//
+//func add(n1: Int, n2: Int) {
+//    print(n1 + n2)
+//}
+//
+//func subtract(n1: Int, n2: Int)  {
+//    print(n1 - n2)
+//}
+//
+//func multiply(n1: Int, n2: Int) {
+//    print(n1 * n2)
+//}
+//
+//func divide(n1: Int, n2: Int) {
+//    print( Double(n1) / Double(n2) )
+//}
+//
+//calculator()
+// --------------------------------
+//Coding Exewrcise 6: IF/ELSE
+func isLeap(year: Int) {
+    
+    if (year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0) {
+        print("\(year): YES")
+    } else if (year % 4 == 0) && (year % 100 == 0) {
+        print("\(year): NO")
+    } else if year % 4 == 0 {
+        print("\(year): YES")
+    } else {
+        print("\(year): NO")
+    }
   
-  add(n1: a, n2: b)
-  subtract(n1: a, n2: b)
-  multiply(n1: a, n2: b)
-  divide(n1: a, n2: b)
-  
 }
+isLeap(year: 1200)
+isLeap(year: 1257)
+isLeap(year: 1997)
+isLeap(year: 2000)
+isLeap(year: 2100)
 
-func add(n1: Int, n2: Int) {
-    print(n1 + n2)
-}
 
-func subtract(n1: Int, n2: Int)  {
-    print(n1 - n2)
-}
-
-func multiply(n1: Int, n2: Int) {
-    print(n1 * n2)
-}
-
-func divide(n1: Int, n2: Int) {
-    print( Double(n1) / Double(n2) )
-}
-
-calculator()
