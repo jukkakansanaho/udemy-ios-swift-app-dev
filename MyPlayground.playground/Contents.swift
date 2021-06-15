@@ -54,7 +54,7 @@
 //}
 //exercise()
 // --------------------------------
-////Coding Exewrcise 5: Functions
+////Coding Exercise 5: Functions
 //func calculator() {
 ////  let a = Int(readLine()!)! //First input
 ////  let b = Int(readLine()!)! //Second input
@@ -86,7 +86,7 @@
 //
 //calculator()
 // --------------------------------
-////Coding Exewrcise 6: IF/ELSE
+////Coding Exercise 6: IF/ELSE
 //func isLeap(year: Int) {
 //
 //    if (year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0) {
@@ -107,29 +107,48 @@
 //isLeap(year: 2100)
 
 // --------------------------------
-//Coding Exewrcise 7: Switch
-func dayOfTheWeek(day: Int) {
-  
-    switch day {
-    case 1:
-        print("Monday")
-    case 2:
-        print("Tuesday")
-    case 3:
-        print("Wednesday")
-    case 4:
-        print("Thursday")
-    case 5:
-        print("Friday")
-    case 6:
-        print("Saturday")
-    case 7:
-        print("Sunday")
-    default:
-        print("Error")
-    }
-  
+//Coding Exercise 7: Switch
+//func dayOfTheWeek(day: Int) {
+//
+//    switch day {
+//    case 1:
+//        print("Monday")
+//    case 2:
+//        print("Tuesday")
+//    case 3:
+//        print("Wednesday")
+//    case 4:
+//        print("Thursday")
+//    case 5:
+//        print("Friday")
+//    case 6:
+//        print("Saturday")
+//    case 7:
+//        print("Sunday")
+//    default:
+//        print("Error")
+//    }
+//
+//}
+//dayOfTheWeek(day: 1)
+
+// --------------------------------
+//Coding Exercise 8: Dictionary
+func exercise() {
+
+    var stockTickers: [String: String] = [
+        "APPL" : "Apple Inc",
+        "HOG": "Harley-Davidson Inc",
+        "BOOM": "Dynamic Materials",
+        "HEINY": "Heineken",
+        "BEN": "Franklin Resources Inc"
+    ]
+    
+    stockTickers["WORK"] = "Slack Technologies Inc"
+    stockTickers["BOOM"] = "DMC Global Inc"
+    
+     //Don't modify this
+    print(stockTickers["WORK"]!)
+    print(stockTickers["BOOM"]!)
 }
-dayOfTheWeek(day: 1)
-
-
+exercise()
