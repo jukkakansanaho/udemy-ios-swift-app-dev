@@ -176,38 +176,52 @@
 
 // --------------------------------
 // Coding Exercise 10: Stuctures
-func exercise() {
+//func exercise() {
+//
+//    // Define the User struct here
+//    struct User {
+//        let name: String
+//        var email: String
+//        var followers: Int
+//        var isActive: Bool
+//
+//        func logStatus() {
+//            if isActive {
+//                print("\(self.name) is working hard")
+//            } else {
+//                print("\(self.name) has left earth")
+//            }
+//        }
+//    }
+//
+//    // Initialise a User struct here
+//    var richard = User(name: "Richard", email: "richard@foo.bar", followers: 0, isActive: false)
+//    richard.logStatus()
+//
+//
+//    // Diagnostic code - do not change this code
+//    print("\nDiagnostic code (i.e., Challenge Hint):")
+//    var musk = User(name: "Elon", email: "elon@tesla.com", followers: 2001, isActive: true)
+//    musk.logStatus()
+//    print("Contacting \(musk.name) on \(musk.email) ...")
+//    print("\(musk.name) has \(musk.followers) followers")
+//    // sometime later
+//    musk.isActive = false
+//    musk.logStatus()
+//
+//}
+//exercise()
 
-    // Define the User struct here
-    struct User {
-        let name: String
-        var email: String
-        var followers: Int
-        var isActive: Bool
-        
-        func logStatus() {
-            if isActive {
-                print("\(self.name) is working hard")
-            } else {
-                print("\(self.name) has left earth")
-            }
-        }
+// --------------------------------
+// Coding Exercise 11: Functions with return value (Part-3)
+
+func isOdd(n: Int) -> Bool{
+    if n % 2 != 0 {
+        return true
+    } else {
+        return false
     }
-
-    // Initialise a User struct here
-    var richard = User(name: "Richard", email: "richard@foo.bar", followers: 0, isActive: false)
-    richard.logStatus()
-
-
-    // Diagnostic code - do not change this code
-    print("\nDiagnostic code (i.e., Challenge Hint):")
-    var musk = User(name: "Elon", email: "elon@tesla.com", followers: 2001, isActive: true)
-    musk.logStatus()
-    print("Contacting \(musk.name) on \(musk.email) ...")
-    print("\(musk.name) has \(musk.followers) followers")
-    // sometime later
-    musk.isActive = false
-    musk.logStatus()
-    
 }
-exercise()
+print(isOdd(n: 2))
+print(isOdd(n: 5))
+print(isOdd(n: 52))
