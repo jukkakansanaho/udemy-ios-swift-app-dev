@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
+    var storylinePosition = 0
+    
     let stories = [
         Story(title: "You see a fork in the road.",
             choice1: "Take a left.",
@@ -34,7 +36,37 @@ class ViewController: UIViewController {
     }
 
     @IBAction func choiceMade(_ sender: UIButton) {
+        let userAnswer = sender.currentTitle!
+        print("UserAnswer: \(userAnswer)")
         
+        let answerNumber = checkAnswer(answer: userAnswer)
+        
+        if answerNumber == 1 {
+            storylinePosition += 1
+            print("Storylineposition: \(storylinePosition)")
+            updateUI(position: storylinePosition)
+        } else if answerNumber == 2 {
+            storylinePosition += 2
+            print("Storylineposition: \(storylinePosition)")
+            updateUI(position: storylinePosition)
+        } else {
+            print("Storylineposition: \(storylinePosition)")
+            print("Error: Wrong selection")
+        }
+    }
+    
+    func checkAnswer(answer: String) -> Int {
+        if answer == stories[storylinePosition].choice1 {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
+    func updateUI(position: Int) {
+        storyLabel.text = stories[position].title
+        choice1Button.setTitle(stories[position].choice1, for: .normal)
+        choice2Button.setTitle(stories[position].choice2, for: .normal)
     }
     
 }
