@@ -54,25 +54,17 @@ struct StoryBrain {
     
     mutating func nextStory(userChoice : String) {
         
-        let answerNumber = checkAnswer(answer: userChoice)
+        let currentStory = stories[storylinePosition]
         
-        if answerNumber == 1 {
-            storylinePosition = stories[storylinePosition].choice1Destination
+        if userChoice == currentStory.choice1 {
+            storylinePosition = currentStory.choice1Destination
             print("Storylineposition: \(storylinePosition)")
-        } else if answerNumber == 2 {
-            storylinePosition = stories[storylinePosition].choice2Destination
+        } else if userChoice == currentStory.choice2 {
+            storylinePosition = currentStory.choice2Destination
             print("Storylineposition: \(storylinePosition)")
         } else {
             print("Storylineposition: \(storylinePosition)")
             print("Error: Wrong selection")
-        }
-    }
-    
-    func checkAnswer(answer: String) -> Int {
-        if answer == stories[storylinePosition].choice1 {
-            return 1
-        } else {
-            return 2
         }
     }
     

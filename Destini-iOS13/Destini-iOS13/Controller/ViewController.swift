@@ -29,11 +29,8 @@ class ViewController: UIViewController {
         let userAnswer = sender.currentTitle!
         print("UserAnswer: \(userAnswer)")
         
-//        let answerNumber = storyBrain.checkAnswer(answer: userAnswer)
-        
         storyBrain.nextStory(userChoice : userAnswer)
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        updateUI()
     }
     
     @objc func updateUI() {
