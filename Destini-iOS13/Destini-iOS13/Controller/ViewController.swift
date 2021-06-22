@@ -14,24 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
-    var storylinePosition = 0
-    
-    let stories = [
-        Story(title: "You see a fork in the road.",
-            choice1: "Take a left.",
-            choice2: "Take a right."),
-        Story(title: "You see a tiger.",
-            choice1: "Shout for help.",
-            choice2: "Play dead."),
-        Story(title: "You find a treasure chest.",
-            choice1: "Open it.",
-            choice2: "Check for traps.")
-    ]
+    var storyBrain = StoryBrain()
+    var timer = Timer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        storyLabel.text = stories[0].title
-        choice1Button.setTitle(stories[0].choice1, for: .normal)
-        choice2Button.setTitle(stories[0].choice2, for: .normal)
+        storyLabel.text = storyBrain.stories[0].title
+        choice1Button.setTitle(storyBrain.stories[0].choice1, for: .normal)
+        choice2Button.setTitle(storyBrain.stories[0].choice2, for: .normal)
 
     }
 
@@ -39,34 +29,17 @@ class ViewController: UIViewController {
         let userAnswer = sender.currentTitle!
         print("UserAnswer: \(userAnswer)")
         
-        let answerNumber = checkAnswer(answer: userAnswer)
+//        let answerNumber = storyBrain.checkAnswer(answer: userAnswer)
         
-        if answerNumber == 1 {
-            storylinePosition += 1
-            print("Storylineposition: \(storylinePosition)")
-            updateUI(position: storylinePosition)
-        } else if answerNumber == 2 {
-            storylinePosition += 2
-            print("Storylineposition: \(storylinePosition)")
-            updateUI(position: storylinePosition)
-        } else {
-            print("Storylineposition: \(storylinePosition)")
-            print("Error: Wrong selection")
-        }
+        storyBrain.nextStory(userChoice : userAnswer)
+        
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
-    func checkAnswer(answer: String) -> Int {
-        if answer == stories[storylinePosition].choice1 {
-            return 1
-        } else {
-            return 2
-        }
-    }
-    
-    func updateUI(position: Int) {
-        storyLabel.text = stories[position].title
-        choice1Button.setTitle(stories[position].choice1, for: .normal)
-        choice2Button.setTitle(stories[position].choice2, for: .normal)
+    @objc func updateUI() {
+        storyLabel.text = storyBrain.getStoryTitle()
+        choice1Button.setTitle(storyBrain.getStoryChoice1(), for: .normal)
+        choice2Button.setTitle(storyBrain.getStoryChoice2(), for: .normal)
     }
     
 }
